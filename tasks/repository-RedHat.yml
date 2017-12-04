@@ -1,9 +1,11 @@
 ---
-
-- name: install repository key
+- name: install repository key (redhat)
   rpm_key:
-    key: "{{ gitlab_gpg }}"
+    key: "{{ key }}"
     state: present
+  with_items: "{{ gitlab_gpg }}"
+  loop_control:
+    loop_var: key
 
 - name: install repository (redhat)
   template:

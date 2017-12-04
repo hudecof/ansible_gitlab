@@ -7,7 +7,7 @@ gitlab_install_packages: "{{ __gitlab_install_packages }}"
 gitlab_config_file: "{{ __gitlab_config_file }}"
 gitlab_bin_ctl: "{{ __gitlab_bin_ctl }}"
 
-gitlab_gpg: https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey
+gitlab_gpg: "{{ __gitlab_gpg }}"
 
 gitlab_cfg_gitlab_function: null
 gitlab_cfg_gitlab_scalar: null

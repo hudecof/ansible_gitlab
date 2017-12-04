@@ -1,10 +1,13 @@
 ---
 
-- name: install repository key
+- name: install repository key (debian)
   apt_key:
-    url: "{{ gitlab_gpg }}"
+    url: "{{ key }}"
     state: present
     keyring: /etc/apt/trusted.gpg.d/gitlab.gpg
+  with_items: "{{ gitlab_gpg }}"
+  loop_control:
+    loop_var: key
 
 - name: install repository (debian)
   template:

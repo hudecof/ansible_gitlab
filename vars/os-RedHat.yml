@@ -7,5 +7,9 @@ __gitlab_packages:
 __gitlab_install_packages:
   - {'name': 'gitlab-ce', 'state': 'present'}
 
+__gitlab_gpg:
+  - https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey
+  - https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey/gitlab-gitlab-ce-3D645A26AB9FBD22.pub.gpg
+
 __gitlab_config_file: /etc/gitlab/gitlab.rb
 __gitlab_bin_ctl: /usr/bin/gitlab-ctl
