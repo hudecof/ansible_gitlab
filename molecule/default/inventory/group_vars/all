@@ -1,0 +1,10 @@
+---
+
+gitlab_cfg_scalar:
+  external_url: 'http://git.example.com'
+gitlab_cfg_prometheus_monitoring:
+  enable: false
+gitlab_cfg_gitlab_pages:
+  enable: false
+gitlab_cfg_gitaly:
+  enable: false

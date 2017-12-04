@@ -1,0 +1,11 @@
+---
+
+__gitlab_packages:
+  - {'name': 'debian-archive-keyring', 'state': 'present'}
+  - {'name': 'apt-transport-https', 'state': 'present'}
+
+__gitlab_install_packages:
+  - {'name': 'gitlab-ce', 'state': 'present'}
+
+__gitlab_config_file: /etc/gitlab/gitlab.rb
+__gitlab_bin_ctl: /usr/bin/gitlab-ctl

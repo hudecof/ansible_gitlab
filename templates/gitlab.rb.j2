@@ -1,0 +1,77 @@
+{{ ansible_managed | comment }}
+
+# for template file see /opt/gitlab/etc/gitlab.rb.template
+
+{% macro giltab_hash(name, values=null) -%}
+{% for k,v in values|default({},true)|dictsort %}
+{{ name }}['{{ k }}'] = {{ v|to_ruby }}
+{% endfor %}
+{%- endmacro %}
+
+{% macro giltab_hash_merge(name, values=null) -%}
+{% for k,v in values|default({},true)|dictsort %}
+{% if v|isdict %}
+{% set k1 = name+'['+ k|to_ruby +']' %}
+{{ giltab_hash_merge(k1, v) }}
+{% else %}
+{{ name }}['{{ k }}'] = {{ v|to_ruby }}
+{% endif %}
+{% endfor %}
+{%- endmacro %}
+
+{% macro giltab_scalar(values=null) -%}
+{% for k,v in values|default({},true)|dictsort %}
+{{ k }} = {{ v|to_ruby }}
+{% endfor %}
+{%- endmacro %}
+
+{% macro giltab_function(values=null) -%}
+{% for k,v in values|default({},true)|dictsort %}
+{{ k }}({{ v|to_ruby }})
+{% endfor %}
+{%- endmacro %}
+
+{{ giltab_scalar(gitlab_cfg_scalar )}}
+{{ giltab_function(gitlab_cfg_function)}}
+
+{{ giltab_hash_merge('default',gitlab_cfg_default )}}
+
+{{ giltab_hash('gitlab_rails', gitlab_cfg_gitlab_rails) }}
+{{ giltab_hash('registry', gitlab_cfg_registry) }}
+{{ giltab_hash('gitlab_workhorse', gitlab_cfg_gitlab_workhorse) }}
+{{ giltab_hash('user', gitlab_cfg_user) }}
+{{ giltab_hash('unicorn', gitlab_cfg_unicorn) }}
+{{ giltab_hash('sidekiq', gitlab_cfg_sidekiq) }}
+{{ giltab_hash('gitlab_shell', gitlab_cfg_gitlab_shell) }}
+{{ giltab_hash('postgresql', gitlab_cfg_postgresql) }}
+{{ giltab_hash('redis', gitlab_cfg_redis) }}
+{{ giltab_hash('web_server', gitlab_cfg_web_server) }}
+{{ giltab_hash('nginx', gitlab_cfg_nginx) }}
+{{ giltab_hash('logging', gitlab_cfg_logging) }}
+{{ giltab_hash('logrotate', gitlab_cfg_logrotate) }}
+{{ giltab_hash('manage_accounts', gitlab_cfg_manage_accounts) }}
+{{ giltab_hash('manage_storage_directories', gitlab_cfg_manage_storage_directories) }}
+{{ giltab_hash('omnibus_gitconfig', gitlab_cfg_omnibus_gitconfig) }}
+{{ giltab_hash('gitlab_pages', gitlab_cfg_gitlab_pages) }}
+{{ giltab_hash('pages_nginx', gitlab_cfg_pages_nginx) }}
+{{ giltab_hash('gitlab_ci', gitlab_cfg_gitlab_ci) }}
+{{ giltab_hash('mattermost', gitlab_cfg_mattermost) }}
+{{ giltab_hash('mattermost_nginx', gitlab_cfg_mattermost_nginx) }}
+{{ giltab_hash('registry_nginx', gitlab_cfg_registry_nginx) }}
+{{ giltab_hash('prometheus_monitoring', gitlab_cfg_prometheus_monitoring) }}
+{{ giltab_hash('prometheus', gitlab_cfg_prometheus) }}
+{{ giltab_hash('node_exporter', gitlab_cfg_node_exporter) }}
+{{ giltab_hash('redis_exporter', gitlab_cfg_redis_exporter) }}
+{{ giltab_hash('postgres_exporter', gitlab_cfg_postgres_exporter) }}
+{{ giltab_hash('gitlab_monitor', gitlab_cfg_gitlab_monitor) }}
+{{ giltab_hash('gitaly', gitlab_cfg_gitaly) }}
+{{ giltab_hash('redis_sentinel_role', gitlab_cfg_redis_sentinel_role) }}
+{{ giltab_hash('sentinel', gitlab_cfg_sentinel) }}
+{{ giltab_hash('sidekiq_cluster', gitlab_cfg_sidekiq_cluster) }}
+{{ giltab_hash('geo_primary_role', gitlab_cfg_geo_primary_role) }}
+{{ giltab_hash('geo_secondary_role', gitlab_cfg_geo_secondary_role) }}
+{{ giltab_hash('geo_secondary', gitlab_cfg_geo_secondary) }}
+{{ giltab_hash('geo_postgresql', gitlab_cfg_geo_postgresql) }}
+{{ giltab_hash('pgbouncer', gitlab_cfg_pgbouncer) }}
+{{ giltab_hash('repmgr', gitlab_cfg_repmgr) }}
+{{ giltab_hash('consul', gitlab_cfg_consul) }}

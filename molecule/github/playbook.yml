@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - hudecof.filter-plugins
+    - hudecof.ansible_gitlab

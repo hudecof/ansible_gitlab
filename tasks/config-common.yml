@@ -1,0 +1,12 @@
+---
+
+- name: generate config file
+  template:
+    src: gitlab.rb.j2
+    dest: "{{ gitlab_config_file }}"
+    owner: root
+    group: root
+    mode: 0600
+    backup: yes
+  notify:
+    - gitlab reconfigure

@@ -1,0 +1,5 @@
+---
+# handlers file for hudecof.gitlab
+
+- name: gitlab reconfigure
+  command: "{{ gitlab_bin_ctl }} reconfigure"

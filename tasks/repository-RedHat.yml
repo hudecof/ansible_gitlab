@@ -1,0 +1,9 @@
+---
+
+- name: install repository (redhat)
+  template:
+    src: repository-RedHat.j2
+    dest: /etc/yum.repos.d/gitlab_gitlab-ce.repo
+    owner: root
+    group: root
+    mode: 0644

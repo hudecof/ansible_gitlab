@@ -1,0 +1,58 @@
+---
+# defaults file for hudecof.gitlab
+
+gitlab_packages: "{{ __gitlab_packages }}"
+gitlab_install_packages: "{{ __gitlab_install_packages }}"
+
+gitlab_config_file: "{{ __gitlab_config_file }}"
+gitlab_bin_ctl: "{{ __gitlab_bin_ctl }}"
+
+gitlab_gpg: https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey
+
+gitlab_cfg_gitlab_function: null
+gitlab_cfg_gitlab_scalar: null
+
+gitlab_cfg_consul: null
+gitlab_cfg_geo_postgresql: null
+gitlab_cfg_geo_primary_role: null
+gitlab_cfg_geo_secondary: null
+gitlab_cfg_geo_secondary_role: null
+gitlab_cfg_gitaly: null
+gitlab_cfg_gitlab_ci: null
+gitlab_cfg_gitlab_monitor: null
+gitlab_cfg_gitlab_pages: null
+gitlab_cfg_gitlab_rails: null
+gitlab_cfg_gitlab_shell: null
+gitlab_cfg_gitlab_workhorse: null
+gitlab_cfg_high_availability: null
+gitlab_cfg_logging: null
+gitlab_cfg_logrotate: null
+gitlab_cfg_manage_accounts: null
+gitlab_cfg_manage_storage_directories: null
+gitlab_cfg_mattermost: null
+gitlab_cfg_mattermost_nginx: null
+gitlab_cfg_nginx: null
+gitlab_cfg_node_exporter: null
+gitlab_cfg_omnibus_gitconfig: null
+gitlab_cfg_pages_nginx: null
+gitlab_cfg_pgbouncer: null
+gitlab_cfg_postgres_exporter: null
+gitlab_cfg_postgresql: null
+gitlab_cfg_prometheus: null
+gitlab_cfg_prometheus_monitoring: null
+gitlab_cfg_redis: null
+gitlab_cfg_redis_exporter: null
+gitlab_cfg_redis_master_role: null
+gitlab_cfg_redis_sentinel_role: null
+gitlab_cfg_redis_slave_role: null
+gitlab_cfg_registry: null
+gitlab_cfg_registry_nginx: null
+gitlab_cfg_repmgr: null
+gitlab_cfg_repmgrd: null
+gitlab_cfg_roles: null
+gitlab_cfg_sentinel: null
+gitlab_cfg_sidekiq: null
+gitlab_cfg_sidekiq_cluster: null
+gitlab_cfg_unicorn: null
+gitlab_cfg_user: null
+gitlab_cfg_web_server: null
