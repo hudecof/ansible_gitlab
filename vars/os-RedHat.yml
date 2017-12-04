@@ -1,7 +1,8 @@
 ---
 
-__gitlab_packages: []
-
+__gitlab_packages:
+  - {'name': 'pygpgme', 'state': 'present'}
+  - {'name': 'yum-utils', 'state': 'present'}
 
 __gitlab_install_packages:
   - {'name': 'gitlab-ce', 'state': 'present'}

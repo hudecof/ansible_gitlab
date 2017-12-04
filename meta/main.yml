@@ -24,4 +24,4 @@ galaxy_info:
   - git
 
 dependencies:
-- src: hudecof.filter-plugins
+  - role: hudecof.filter-plugins

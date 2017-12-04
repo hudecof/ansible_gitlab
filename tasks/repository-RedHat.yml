@@ -1,5 +1,10 @@
 ---
 
+- name: install repository key
+  rpm_key:
+    key: "{{ gitlab_gpg }}"
+    state: present
+
 - name: install repository (redhat)
   template:
     src: repository-RedHat.j2
