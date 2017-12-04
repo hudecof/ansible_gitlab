@@ -3,4 +3,4 @@
   hosts: all
   roles:
     - hudecof.filter-plugins
-    - hudecof.ansible_gitlab
+    - ansible_gitlab
