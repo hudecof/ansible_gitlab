@@ -1,5 +1,4 @@
 # Gitlab Omnibus
-=========
 
 Install nad configure gitlab omnibus packages
 
