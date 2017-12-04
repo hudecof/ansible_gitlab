@@ -1,6 +1,6 @@
 ---
 # defaults file for hudecof.gitlab
-
+gitlab_test: false
 gitlab_packages: "{{ __gitlab_packages }}"
 gitlab_install_packages: "{{ __gitlab_install_packages }}"
 

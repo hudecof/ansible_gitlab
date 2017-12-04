@@ -3,3 +3,4 @@
 
 - name: gitlab reconfigure
   command: "{{ gitlab_bin_ctl }} reconfigure"
+  when: not gitlab_test

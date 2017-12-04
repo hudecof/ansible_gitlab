@@ -1,5 +1,5 @@
 ---
-
+gitlab_test: true
 gitlab_cfg_scalar:
   external_url: 'http://git.example.com'
 gitlab_cfg_prometheus_monitoring:
