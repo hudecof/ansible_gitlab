@@ -1,8 +1,8 @@
 ---
 galaxy_info:
+  role_name: gitlab
   author: Peter Hudec
   description: Gitlab Omnibuss install and configuration
-  company: CNC, a.s.
   license: BSD
   min_ansible_version: 2.1
   platforms:
@@ -17,8 +17,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - xenial
-    - trusty
-
+    - bionic
   galaxy_tags:
   - Gitlab
   - git
