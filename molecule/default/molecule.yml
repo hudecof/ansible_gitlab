@@ -18,7 +18,7 @@ provisioner:
   name: ansible
   inventory:
     links:
-      group_vars: ../inventory/group_vars/
+      group_vars: inventory/group_vars/
   lint:
     name: ansible-lint
 scenario:
