@@ -2,5 +2,5 @@
 - name: Converge
   hosts: all
   roles:
-    - hudecof.filter-plugins
+    - hudecof.filter_plugins
     - ansible_gitlab

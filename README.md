@@ -5,7 +5,7 @@ Install nad configure gitlab omnibus packages
 ## Requirements
 
 Extenal roles:
-  - `hudecof.filter-plugins`
+  - `hudecof.filter_plugins`
  
 
 ## Role Variables
